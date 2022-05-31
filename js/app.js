@@ -62,7 +62,7 @@ if (url.length>0){
     
 var time= setTimeout(() => {  ping(url, function(m){ if (m>0){list.innerHTML += ` <li style="color:white;"> ${" "+m+" milisecondes."}</li>` }else{list.innerHTML = ``;}})
 }, interv);
-clearTimeou(time);
+clearTimeout(time);
 
   
 
