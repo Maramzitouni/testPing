@@ -60,8 +60,9 @@ var interv = 1000*interval;
 if (url.length>0){
   
     
-setTimeout(() => {  ping(url, function(m){ if (m>0){list.innerHTML += ` <li style="color:white;"> ${" "+m+" milisecondes."}</li>` }else{list.innerHTML = ``;}})
+var time= setTimeout(() => {  ping(url, function(m){ if (m>0){list.innerHTML += ` <li style="color:white;"> ${" "+m+" milisecondes."}</li>` }else{list.innerHTML = ``;}})
 }, interv);
+clearTimeou(time);
 
   
 
