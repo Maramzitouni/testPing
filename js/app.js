@@ -25,25 +25,9 @@ let progress = setInterval(() => {
     clearInterval(progress);
   }
 }, speed);
-var url3= document.getElementById("url").value;
+var url= document.getElementById("url").value;
 var interval= document.getElementById("interval").value;
 
-var url2= new URL(url3);
-var url = removeHttp(url2.origin);
-
-function removeHttp(url) {
-  if (url.startsWith('https://')) {
-    const https = 'https://';
-    return url.slice(https.length);
-  }
-
-  if (url.startsWith('http://')) {
-    const http = 'http://';
-    return url.slice(http.length);
-  }
-
-  return url;
-}
 
 function ping(host, pong) {
   var started = new Date().getTime();
@@ -74,12 +58,12 @@ list.innerHTML = ``;
 
 var interv = 1000*interval;
 if (url.length>0){
-  for (var i=0;i<6;i++) {
+  
     
 setTimeout(() => {  ping(url, function(m){ if (m>0){list.innerHTML += ` <li style="color:white;"> ${" "+m+" milisecondes."}</li>` }else{list.innerHTML = ``;}})
 }, interv);
 
-  }
+  
 
 }else if(url.length<=0){
     list.innerHTML = `site non valide`;
